@@ -24,4 +24,3 @@ else:
     print("Poptávku lze uspokojit v plné výši.")
     sklad[kod] = sklad[kod] - mnozstvi
     print(f"Na skladě zbývá {sklad[kod]} ks součástky {kod}.")
-
