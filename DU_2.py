@@ -17,8 +17,11 @@ mnozstvi = int(input("Zadejte požadované množství:"))
 
 if kod not in sklad:
     print("Součástka není skladem.")
-elif kod in sklad and mnozstvi >= sklad[kod]:
+elif kod in sklad and mnozstvi > sklad[kod]:
     print(f"Součástky {kod} je možné prodat pouze {sklad[kod]} ks, tj. o {mnozstvi - sklad[kod]} ks méně než je požadavek.")
+    sklad.pop(kod)
+elif kod in sklad and mnozstvi == sklad[kod]:
+    print("Poptávku lze uspokojit v plné výši.")
     sklad.pop(kod)
 else:
     print("Poptávku lze uspokojit v plné výši.")
