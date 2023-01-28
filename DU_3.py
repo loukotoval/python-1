@@ -27,4 +27,4 @@ for student in body:
 print(body)
 
 with open('python-1/prospech.json', mode='w', encoding='utf-8') as soubor:
-    json.dump(body, soubor)
+    json.dump(body, soubor, ensure_ascii=False)
