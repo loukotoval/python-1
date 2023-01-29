@@ -50,3 +50,11 @@ morse_code = {
     "(": "-.--.",
     ")": "-.--.-",
 }
+
+slovo = input("Zadejte slovo:")
+
+for pismeno in slovo:
+    if pismeno == " ":
+        print("/", end=" ")
+    else:
+        print(morse_code[pismeno], end=" ")
