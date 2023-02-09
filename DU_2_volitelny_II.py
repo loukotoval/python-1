@@ -2149,6 +2149,6 @@ staty = [
 
 # Vytvoř program, který se uživatele zeptá na region, který ho zajímá. Následně projdi seznam a vypiš všechny státy, které leží v regionu. Pokud program žádný stát pro daný region nenajde, vypiš text "Neznámý region".
 
-region = input("Zadejte požadovaný region:")
+oblast = input("Zadejte požadovaný region:")
 
-print(region)
+print(oblast)
