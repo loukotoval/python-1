@@ -18,13 +18,15 @@ body = json.loads(data)
 #print(body["Robert Pospíšil"])
 
 # pro celou skupinu studentů:
-for student in body:
-    if body[student] < 60:
-        body[student] = "Fail"
-    else:
-        body[student] = "Pass"
 
-print(body)
+prospech = {}
+for student, hodnoceni in body.items():
+    if body[student] < 60:
+        prospech[student] = "Fail"
+    else:
+        prospech[student] = "Pass"
+
+print(prospech)
 
 with open('python-1/prospech.json', mode='w', encoding='utf-8') as soubor:
-    json.dump(body, soubor, ensure_ascii=False)
+    json.dump(prospech, soubor, ensure_ascii=False)
