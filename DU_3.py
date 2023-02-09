@@ -19,7 +19,7 @@ body = json.loads(data)
 
 # pro celou skupinu studentů:
 prospech = {}
-for student, hodnoceni in body.items():
+for student in body:
     if body[student] < 60:
         prospech[student] = "Fail"
     else:
