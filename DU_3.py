@@ -18,7 +18,6 @@ body = json.loads(data)
 #print(body["Robert Pospíšil"])
 
 # pro celou skupinu studentů:
-
 prospech = {}
 for student, hodnoceni in body.items():
     if body[student] < 60:
@@ -29,4 +28,4 @@ for student, hodnoceni in body.items():
 print(prospech)
 
 with open('python-1/prospech.json', mode='w', encoding='utf-8') as soubor:
-    json.dump(prospech, soubor, ensure_ascii=False)
+    json.dump(prospech, soubor, ensure_ascii=False, indent=4)
