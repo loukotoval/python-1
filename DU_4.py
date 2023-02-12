@@ -9,14 +9,14 @@
 # Tvůj program nejprve ověří pomocí první funkce správnost telefonního čísla. Pokud není platné, vypíše chybu, v opačném případě se zeptá na text zprávy a pomocí druhé funkce určí její cenu, kterou vypíše uživateli.
 
 # ověření telefonního čísla:
-def overeni_cisla(telefon):
+def overeni_cisla(telefon: str) -> bool: 
     if len(telefon) == 9 or (len(telefon) == 13 and telefon[0:4] == "+420"):
         return(True)
     else:
         return(False)
 
 # výpočet ceny za zprávu:
-def cena_zpravy(zprava):
+def cena_zpravy(zprava: str) -> int:
     if len(zprava)%180 == 0:
         cena = (len(zprava)//180)*3
     else:
