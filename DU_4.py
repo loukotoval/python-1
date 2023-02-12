@@ -7,9 +7,12 @@
 ## Druhá funkce spočte cenu zprávy. Uživatel platí 3 Kč za každých započatých 180 znaků.
 
 # Tvůj program nejprve ověří pomocí první funkce správnost telefonního čísla. Pokud není platné, vypíše chybu, v opačném případě se zeptá na text zprávy a pomocí druhé funkce určí její cenu, kterou vypíše uživateli.
+# Bonus 1: Zkus svoji první funkci upravit tak, že si bude umět poradit s mezerami v telefonním čísle. Mezer se zbavíš například tak, že použiješ metodu .replace(). První parametr metody replace je znak, který chceš nahradit, a druhý parametr nový znak. Pokud se chceš nějakého znaku zbavit, "nahraď" ho prázdným řetězcem "".
+# Bonus 2: Přidej svým funkcím typování, aby bylo jasné, jaký typy mají parametry tvých funkcí a jaká je návratová hodnota tvých funkcí.
 
 # ověření telefonního čísla:
-def overeni_cisla(telefon: str) -> bool: 
+def overeni_cisla(telefon: str) -> bool:
+    telefon = telefon.replace(" ", "")
     if len(telefon) == 9 or (len(telefon) == 13 and telefon[0:4] == "+420"):
         return(True)
     else:
