@@ -8,18 +8,22 @@
 
 # Tvůj program nejprve ověří pomocí první funkce správnost telefonního čísla. Pokud není platné, vypíše chybu, v opačném případě se zeptá na text zprávy a pomocí druhé funkce určí její cenu, kterou vypíše uživateli.
 
-
+# ověření telefonního čísla:
 def overeni_cisla(telefon):
-    if len(telefon) == 9 or len(telefon) == 13:
+    if len(telefon) == 9 or (len(telefon) == 13 and telefon[0:4] == "+420"):
         return(True)
     else:
         return(False)
 
+# výpočet ceny za zprávu:
 def cena_zpravy(zprava):
-    cena = (len(zprava)//180)*3
+    if len(zprava)%180 == 0:
+        cena = (len(zprava)//180)*3
+    else:
+        cena = (len(zprava)//180 + 1)*3
     return(cena)
 
-
+# program:
 telefon = (input("Zadejte telefonní číslo: "))
 
 if overeni_cisla(telefon) == False:
